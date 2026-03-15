@@ -5,7 +5,17 @@
 # if __name__ == "__main__":
 #     main()
 
+import os
 from fastapi import FastAPI
+from pydantic import BaseModel
+import google.generativeai as genai
+
+# APIキーの設定
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+model = genai.GenerativeModel(
+    model_name="gemini-2.0-flash-exp",
+    system_instruction="あなたはプロの販売員です。悩みに合わせた商品を1つ提案して。回答は簡潔に。"
+)
 
 app = FastAPI()
 
