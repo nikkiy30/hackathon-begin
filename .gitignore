@@ -15,6 +15,3 @@ __pycache__/
 # --- OS specific ---
 .DS_Store
 Thumbs.db
-
-# --- others ---
-env*.local
